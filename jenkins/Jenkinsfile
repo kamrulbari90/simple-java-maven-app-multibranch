@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'node01' }
+    environment {
+        PATH = "/opt/maven/bin:${env.PATH}"
+    }
     stages {
         stage('Build') {
             steps {
